@@ -1,1 +1,10 @@
 /* write your css here */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.homepage_bg {
+    background: url("../src/assets/Images/bghome.svg");
+    /* background-size: contain; */
+  }
