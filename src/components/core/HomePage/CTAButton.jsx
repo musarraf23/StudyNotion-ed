@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const Button = ({ children, active, linkto }) => {
+const CTAButton = ({ children, active, linkto }) => {
   return (
     <Link to={linkto}>
       <div
@@ -14,5 +14,4 @@ const Button = ({ children, active, linkto }) => {
     </Link>
   );
 };
-
-export default Button;
+export default CTAButton;
