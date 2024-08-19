@@ -9,6 +9,7 @@
     "concurrently": "^8.2.2",
     "dotenv": "^16.4.5",
     "icons": "^1.0.0",
+    "outlet": "^0.1.5",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-hook-form": "^7.52.2",

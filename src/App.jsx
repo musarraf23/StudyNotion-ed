@@ -12,7 +12,7 @@ import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Dashboard from "./pages/Dashboard";
 import PrivateRoute from "./components/core/Auth/PrivateRoute";
-
+import MyProfile from "./components/core/Dashboard/MyProfile";
 
 
 function App() {
@@ -70,12 +70,43 @@ function App() {
         <Route
          path="/contact" 
         element={<Contact />} />
-        <Route path=""
-        element={
-          <PrivateRoute>
-            <Dashboard/>
-          </PrivateRoute>
-        }/>
+
+
+         <Route 
+      element={
+        <PrivateRoute>
+          <Dashboard />
+        </PrivateRoute>
+      }
+    >
+      <Route path="dashboard/my-profile" element={<MyProfile/>} />
+      
+     {/*  <Route path="dashboard/Settings" element={<Settings />} /> */}
+      
+
+      {/* {
+        user?.accountType === ACCOUNT_TYPE.STUDENT && (
+          <>
+          <Route path="dashboard/cart" element={<Cart />} />
+          <Route path="dashboard/enrolled-courses" element={<EnrolledCourses />} />
+          </>
+        )
+      }
+
+      {
+        user?.accountType === ACCOUNT_TYPE.INSTRUCTOR && (
+          <>
+          <Route path="dashboard/instructor" element={<Instructor />} />
+          <Route path="dashboard/add-course" element={<AddCourse />} />
+          <Route path="dashboard/my-courses" element={<MyCourses />} />
+          <Route path="dashboard/edit-course/:courseId" element={<EditCourse />} />
+          
+          </>
+        )
+      }
+
+ */}
+    </Route>       
       </Routes>
     </div>
   );
