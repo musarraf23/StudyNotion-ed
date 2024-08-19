@@ -185,4 +185,4 @@ const ContactUsForm = () => {
   )
 }
 
-export default ContactUsForm;
+export default ContactUsForm
