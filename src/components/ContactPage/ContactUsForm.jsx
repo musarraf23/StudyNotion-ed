@@ -30,7 +30,7 @@ const ContactUsForm = () => {
       setLoading(false)
     }
   }
-
+ 
   useEffect(() => {
     if (isSubmitSuccessful) {
       reset({
@@ -185,4 +185,4 @@ const ContactUsForm = () => {
   )
 }
 
-export default ContactUsForm
+export default ContactUsForm;
