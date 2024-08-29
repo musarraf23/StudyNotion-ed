@@ -13,10 +13,16 @@ import Contact from "./pages/Contact";
 import Dashboard from "./pages/Dashboard";
 import PrivateRoute from "./components/core/Auth/PrivateRoute";
 import MyProfile from "./components/core/Dashboard/MyProfile";
-import Settings from "./components/core/Auth/Settings/index";
+import Settings from "./components/core/Dashboard/Settings/index";
 import { useDispatch, useSelector } from "react-redux";
 import { ACCOUNT_TYPE } from "./utils/constants";
 import Cart from "./components/core/Dashboard/Cart/index"
+import EnrolledCourses from "./components/core/Dashboard/EnrrolledCourse";
+import Instructor from "./components/core/Dashboard/InstructorDashboard/Instructor";
+import AddCourse from "./components/core/Dashboard/AddCourse";
+
+
+
 function App() {
   const dispatch = useDispatch();
   const navigate = useNavigate()
@@ -26,7 +32,6 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
-
         <Route
           path="signup"
           element={
@@ -93,20 +98,20 @@ function App() {
         user?.accountType === ACCOUNT_TYPE.STUDENT && (
           <>
           <Route path="dashboard/cart" element={<Cart />} />
-          {/* <Route path="dashboard/enrolled-courses" element={<EnrolledCourses />} /> */}
+           <Route path="dashboard/enrolled-courses" element={<EnrolledCourses />} /> 
           </>
         )
       }
 
       {
         user?.accountType === ACCOUNT_TYPE.INSTRUCTOR && (
-          {/* <>
+           <>
           <Route path="dashboard/instructor" element={<Instructor />} />
           <Route path="dashboard/add-course" element={<AddCourse />} />
-          <Route path="dashboard/my-courses" element={<MyCourses />} />
-          <Route path="dashboard/edit-course/:courseId" element={<EditCourse />} />
+          {/* <Route path="dashboard/my-courses" element={<MyCourses />} />
+          <Route path="dashboard/edit-course/:courseId" element={<EditCourse />} /> */}
           
-          </> */}
+          </> 
         )
       }
 
