@@ -20,6 +20,7 @@ import Cart from "./components/core/Dashboard/Cart/index"
 import EnrolledCourses from "./components/core/Dashboard/EnrrolledCourse";
 import Instructor from "./components/core/Dashboard/InstructorDashboard/Instructor";
 import AddCourse from "./components/core/Dashboard/AddCourse";
+import MyCourses from "./components/core/Dashboard/MyCourse";
 
 
 
@@ -108,8 +109,8 @@ function App() {
            <>
           <Route path="dashboard/instructor" element={<Instructor />} />
           <Route path="dashboard/add-course" element={<AddCourse />} />
-          {/* <Route path="dashboard/my-courses" element={<MyCourses />} />
-          <Route path="dashboard/edit-course/:courseId" element={<EditCourse />} /> */}
+          <Route path="dashboard/my-courses" element={<MyCourses />} />
+          {/* <Route path="dashboard/edit-course/:courseId" element={<EditCourse />} />  */}
           
           </> 
         )

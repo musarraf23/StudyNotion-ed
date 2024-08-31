@@ -8,6 +8,7 @@ const CourseProgress = require("../models/CourseProgress")
 const { convertSecondsToDuration } = require("../utils/secToDuration")
 // Function to create a new course
 exports.createCourse = async (req, res) => {
+  console.log("Controller" , req);
   try {
     // Get user ID from request object
     const userId = req.user.id
