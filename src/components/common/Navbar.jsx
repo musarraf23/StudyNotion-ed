@@ -8,6 +8,7 @@ import logo from "../../assets/Logo/Logo-Full-Light.png"
 import { NavbarLinks } from "../../data/navbar-links"
 import { apiConnector } from "../../services/apiconnector"
 import { categories } from "../../services/apis"
+import { ACCOUNT_TYPE } from "../../utils/constants"
 import ProfileDropdown from "../core/Auth/ProfileDropdown"
 
 function Navbar() {
@@ -21,25 +22,17 @@ function Navbar() {
 
   useEffect(() => {
     ;(async () => {
-      setLoading(true);
+      setLoading(true)
       try {
-        const res = await apiConnector("GET", categories.CATEGORIES_API);
-        setSubLinks(res.data.data);
-        console.log("data  : ",res);
-
-        console.log("API Response:", res); // Log the response to ensure data is coming in correctly
+        const res = await apiConnector("GET", categories.CATEGORIES_API)
+        setSubLinks(res.data.data)
+        console.log("Categories response",res)
       } catch (error) {
-        console.log("Could not fetch Categories.", error);
-      } finally {
-        setLoading(false);
+        console.log("Could not fetch Categories.", error)
       }
-    })();
-  }, []);
-  
-  useEffect(() => {
-    console.log("subLinks updated:", subLinks);
-  }, [subLinks]); // This useEffect will run whenever subLinks changes
-  
+      setLoading(false)
+    })()
+  }, [])
 
   // console.log("sub links", subLinks)
 
@@ -62,6 +55,7 @@ function Navbar() {
         <nav className="hidden md:block">
           <ul className="flex gap-x-6 text-richblack-25">
             {NavbarLinks.map((link, index) => (
+              
               <li key={index}>
                 {link.title === "Catalog" ? (
                   <>
@@ -93,7 +87,6 @@ function Navbar() {
                                   className="rounded-lg bg-transparent py-4 pl-4 hover:bg-richblack-50"
                                   key={i}
                                 >
-                                
                                   <p>{subLink.name}</p>
                                 </Link>
                               ))}
@@ -123,7 +116,7 @@ function Navbar() {
         </nav>
         {/* Login / Signup / Dashboard */}
         <div className="hidden items-center gap-x-4 md:flex">
-          {user && user?.accountType !== "Instructor" && (
+          {user && user?.accountType !== ACCOUNT_TYPE.INSTRUCTOR && (
             <Link to="/dashboard/cart" className="relative">
               <AiOutlineShoppingCart className="text-2xl text-richblack-100" />
               {totalItems > 0 && (
