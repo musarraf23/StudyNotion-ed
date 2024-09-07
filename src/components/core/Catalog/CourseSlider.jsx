@@ -3,7 +3,6 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/free-mode";
 import "swiper/css/pagination";
-import { Autoplay, Navigation } from 'swiper';
 import { FreeMode, Pagination } from 'swiper/modules'; // Correct import
 
 import CourseCard from './Course_Card'; // Updated to PascalCase
